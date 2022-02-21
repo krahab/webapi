@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/hello', [MeasureController::class, 'getHelloWorld']);
-Route::get('/index', [MeasureController::class, 'index']);
+Route::get('/measures', [MeasureController::class, 'measures']);

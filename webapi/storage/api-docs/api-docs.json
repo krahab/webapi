@@ -1,0 +1,70 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ProjectDocumentation",
+        "description": "Description of my api",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/",
+            "description": "Serveur local"
+        }
+    ],
+    "paths": {
+        "/api/hello": {
+            "get": {
+                "summary": "Affiche Hello World",
+                "operationId": "9451ce1f57383e550172ddba77acbdae",
+                "responses": {
+                    "200": {
+                        "description": "Returns     Hello World"
+                    }
+                }
+            }
+        },
+        "/api/measures": {
+            "get": {
+                "summary": "Affiche les données de la table Measures",
+                "operationId": "60620179294e4f03df9a902b444acdd8",
+                "responses": {
+                    "200": {
+                        "description": "Returns     Hello World"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "/api/login and set the token in the box",
+                "name": "Token in Authorization header",
+                "in": "header",
+                "scheme": "bearer"
+            },
+            "Oauth2Password": {
+                "type": "oauth2",
+                "description": "Utilisez client_id / client_secret et votre courriel / mot de passe pour obtenir un jeton d'authentification.",
+                "in": "header",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "/oauth/authorize",
+                        "tokenUrl": "/oauth/token",
+                        "refreshUrl": "/oauth/token/refresh",
+                        "scopes": {}
+                    }
+                },
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

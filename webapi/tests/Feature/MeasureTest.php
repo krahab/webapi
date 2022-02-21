@@ -20,7 +20,7 @@ class MeasureTest extends TestCase
         // Arrange
         $returnStatusCode = 200;
         // Act
-        $response = $this->get('/api/index');
+        $response = $this->get('/api/measures');
         // Assert
         $response->assertStatus($returnStatusCode );
     }
